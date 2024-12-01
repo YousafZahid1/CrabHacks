@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Oasis AI Stock Picker</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+
+    <style>
+        body {
+            font-family: 'Cabin', sans-serif;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding-top: 60px;
+        }
+
+        .navbar {
+            background-color: #34495e;
+        }
+
+        .navbar .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #ecf0f1 !important;
+        }
+
+        .navbar .nav-link:hover {
+            color: #3498db !important;
+        }
+
+        h1, h2 {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #stockList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .stock-item {
+            background-color: #1abc9c;
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stock-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .stock-item h5 {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stock-item p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        #generateButton {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        #generateButton:hover {
+            background-color: #2980b9;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 1.5em;
+            color: #ecf0f1;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+
+        .essay-section {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        .essay-section h3 {
+            color: #3498db;
+        }
+
+        .essay-section p {
+            font-size: 1.1em;
+            line-height: 1.8em;
+        }
+    </style>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-light" id="mainNav">
+        <div class="container">
+            <img src="assets/img/logo.png" width="63" height="49" alt="Logo">
+            <a class="navbar-brand" href="#">Oasis</a>
+            <button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/interestcalculator.html">Interest Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/expenses.html">Expenses</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/stocks.html">Stocks</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container mt-5">
+        <h2 class="text-center">AI-Picked Stocks</h2>
+        <div class="container">
+            <h1>AI-Picked Stocks with Minimal Risk</h1>
+            <p class="text-center">Our advanced AI algorithms analyze market data, trends, and other factors to identify stocks with significant growth potential and minimal downside risk. These AI-picked stocks are selected based on robust analysis, giving you a portfolio of high-growth opportunities.</p>
+            
+            <div id="stockList" class="loading">Loading...</div>
+            <button id="generateButton">Generate New AI-Picked Stocks</button>
+        </div>
+    </div>
+
+    <!-- Essay Section -->
+    <div class="essay-section">
+        <h3>What is the Stock Market?</h3>
+        <p>The stock market is a platform where individuals and institutions buy and sell shares of publicly traded companies. It plays a crucial role in the economy by allowing businesses to raise capital and providing investors with opportunities to grow their wealth. The stock market can be complex and intimidating for those who are unfamiliar with it, but understanding its basics can help people make informed decisions about investing.</p>
+        <p>At its core, the stock market operates through a system of exchanges, such as the New York Stock Exchange (NYSE) or the Nasdaq. These exchanges provide a space for buyers and sellers to come together and trade company stocks, which represent partial ownership of those companies. When you purchase a stock, you own a small piece of that company, and as the company grows, the value of the stock may increase, allowing you to profit by selling it at a higher price.</p>
+        <p>Investing in the stock market allows individuals to participate in the growth and success of businesses. Stocks can increase in value over time based on factors such as company performance, economic conditions, and market sentiment. However, stock prices can also decrease, leading to financial losses. Therefore, investing in the stock market involves risk, but it also offers the potential for significant rewards. With the help of tools such as AI stock pickers, even those with limited knowledge of the market can make more informed investment choices.</p>
+        <p>For beginners, it’s essential to understand basic concepts such as stock types (common vs. preferred), dividends (payments made to shareholders), and the overall market trends. Learning how to research and evaluate companies, and staying updated with market news, can also enhance your ability to make educated decisions. Though the stock market can seem overwhelming at first, with time and experience, anyone can become a more confident investor.</p>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Predefined stock data
+        const stockData = {
+            AAPL: { price: 175.43, symbol: "AAPL" },
+            GOOGL: { price: 144.78, symbol: "GOOGL" },
+            MSFT: { price: 331.18, symbol: "MSFT" },
+            TSLA: { price: 244.87, symbol: "TSLA" },
+            AMZN: { price: 134.39, symbol: "AMZN" },
+            BTC: { price: 37350.12, symbol: "BTC" },
+            ETH: { price: 2500.67, symbol: "ETH" },
+            DOGE: { price: 0.43, symbol: "DOGE" },
+            BCH: { price: 220.35, symbol: "BCH" },
+            SOL: { price: 35.10, symbol: "SOL" },
+            LTC: { price: 68.25, symbol: "LTC" },
+            META: {price: 574.32, symbol: "META" },
+            XRP: { price: 1.16, symbol: "XRP" },
+            BSV: { price: 1.10, symbol: "BSV" },
+            UNI: { price: 1.34, symbol: "UNI" },
+            LINK: { price: 1.15, symbol: "LINK" },
+            AAVE: { price: 1.45, symbol: "AAVE" },
+            DAI: { price: 1.00, symbol: "DAI" },
+            COMP: { price: 21.20, symbol: "COMP" },
+            UNISWAP: { price: 1.00, symbol: "UNISWAP" },
+            
+        };
+    
+        const stockSymbols = Object.keys(stockData); // Extract all stock symbols
+    
+    // Function to fetch stock data
+    function fetchStockData(symbol) {
+        const stock = stockData[symbol];
+        if (stock) {
+            const currentTime = new Date().toLocaleTimeString();
+            return {
+                symbol: stock.symbol,
+                price: stock.price.toFixed(2),
+                time: currentTime
+            };
+        } else {
+            return { symbol, price: 'N/A', time: 'N/A' }; // Fallback for invalid symbols
+        }
+    }
+
+    // Generate AI-picked stock list
+    function generateStockList() {
+        const stockListContainer = document.getElementById('stockList');
+        stockListContainer.innerHTML = ''; // Clear existing stocks
+
+        // Select 4 random stocks from the predefined data
+        const selectedStocks = stockSymbols
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 4);
+
+        selectedStocks.forEach(symbol => {
+            const stock = fetchStockData(symbol);
+            const stockElement = document.createElement('div');
+            stockElement.classList.add('stock-item');
+            stockElement.innerHTML = `
+                <h5>${stock.symbol}</h5>
+                <p>Price: $${stock.price}</p>
+                <p>Last Updated: ${stock.time}</p>
+            `;
+            stockListContainer.appendChild(stockElement);
+        });
+    }
+
+    document.getElementById('generateButton').addEventListener('click', (e) => {
+        e.preventDefault();
+        generateStockList();
+    });
+
+    // Initial stock load
+    generateStockList();
+</script>
+</body>
+
+</html>
+

@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+ }
+ 
+ 
+ .container {
+   position: fixed; /* Ensures the navbar stays fixed at the top */
+   top: 0;          /* Align it to the very top */
+   left: 0;         /* Ensure it spans from the left edge */
+   width: 100%;     /* Make it span the full width of the screen */
+   z-index: 1000;   /* Keeps the navbar above other content */
+   background-color: #fff; /* Set a solid background for visibility */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+   padding: 10px 20px; /* Add padding for aesthetic spacing */
+}
+
+ 
+ 
+ #stockList {
+    margin-top: 20px;
+ }
+ 
+ 
+ .stock {
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+ }
+ 
+ 
+ button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+ 
+ 
+ 

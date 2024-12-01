@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Oasis - Expense Tracker</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-expand-md fixed-top navbar-light" id="mainNav">
+        
+        <div class="container"><img src="assets/img/logo.png" width="63" height="49"><a class="navbar-brand" href="#">Oasis</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link" href="/index.html">About</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="/interestcalculator.html">Interest Calculator</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link active" href="expenses.html">Expenses</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="stocks.html">STOCKS</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Expense Tracker</h2>
+        <div id="calendar"></div>
+        <form id="expenseForm">
+            <div class="mb-3">
+                <label for="expenseCategory" class="form-label">Expense Category</label>
+                <select id="expenseCategory" class="form-select">
+                    <option value="Rent">Rent</option>
+                    <option value="Food">Food</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Subscription">Subscription</option>
+                    <option value="Personal expenses">Personal expenses</option>
+                    <option value="Savings, investment">Savings, investment</option>
+                    <option value="Debt">Debt</option>
+                    <option value="Health care">Health care</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="expenseAmount" class="form-label">Amount</label>
+                <input type="number" class="form-control" id="expenseAmount" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Expense</button>
+        </form>
+        <br>
+        <p id="topExpenses"></p>
+        <h3 class="mt-4">Expenses</h3>
+        <ul id="expenseList"></ul>
+
+        <p id="totalExpenses"></p>
+        <canvas id="pieChart" width="400" height="400"></canvas>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/grayscale.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/expenses.js"></script>
+</body>
+
+</html>

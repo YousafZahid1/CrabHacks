@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="interestcalculatorstyles.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Interest Calculator</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light" id="mainNav">
+        
+        <div class="container"><img src="assets/img/logo.png" width="63" height="49"><a class="navbar-brand" href="#">Oasis</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link" href="/index.html">About</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link active" href="/interestcalculator.html">Interest Calculator</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="expenses.html">Expenses</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="stocks.html">STOCKS</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div id="top" class="calculator">
+        <label for="typeOfInterest">Select the type of interest:</label>
+        <select name="typeOfInterest" id="selectBox">
+            <option value="simple">Simple Interest</option>
+            <option value="compound">Compound Interest</option>
+        </select>
+    </div>
+    <div class="calculator" id="simple-interest">
+        <h1>Simple Interest</h1>
+        <div class="info" id="simpleInfo">
+            i
+            <div id="simpleInfoPage">In simple interest, the interest rate is simply applied to the principal once a year!
+
+                ______________
+                Principal Interest: Interest = Principal * Rate * Time
+                ______________
+
+                Compound Interest: Principal * (1 + Rate / Compound Count) ^ (Rate * Time) - Principal
+            </div>
+        </div>
+        <label for="principal">Principal Amount:</label>
+        <input type="number" id="principal1" placeholder="Enter principal...">
+<br>
+        <label for="rate">Annual Interest Rate (%):</label>
+        <input type="number" id="rate1" placeholder="Enter interest rate...">
+<br>
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years1" placeholder="Enter # of years...">
+<br>
+        <button onclick="calculateSimpInterest()">Calculate</button>
+
+        <div id="result1"></div>
+    </div>
+    <div class="calculator" id="compound-interest">
+        
+        <h1 style="margin-bottom: 0;">Compound Interest</h1>
+        <div class="info" id="compoundInfo">
+            
+            <div id="compoundInfoPage">Compound interest occurs when the interest rate is compounded on the principal multiple times throughout the year.</div>
+        </div>
+        <label for="continuous">Continuous?</label>
+        <input type="checkbox" name="continuous" onclick="continuousInterest()" id="continuousInterest">
+<br>
+        <label for="principal">Principal Amount:</label>
+        <input type="number" id="principal2" placeholder="Enter principal...">
+<br>
+        <label for="rate">Annual Interest Rate (%):</label>
+        <input type="number" id="rate2" placeholder="Enter interest rate...">
+<br>
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years2" placeholder="Enter # of years...">
+<br>
+        <label for="years" id="numOfCompoundsLabel">Compound Count Per Year:</label>
+        <input type="number" id="numOfCompounds" placeholder="Enter count...">
+<br>
+        <button onclick="calculateCompInterest()" class = "txt">Calculate</button>
+
+        <div id="result2"></div>
+    </div>
+    
+
+    <script src="scriptt.js"></script>
+    <style>
+        .txt{
+            background-color: gray;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 34px;
+            
+        }
+       
+
+    </style>
+
+
+</body>
+</html>
+

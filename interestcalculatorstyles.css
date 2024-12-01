@@ -1,0 +1,155 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+} */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("intro-bg.jpg"); /* Replace 'your-background-image.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    display:block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background-color: transparent; /* Transparent white background */
+    padding: 20px;
+    border-radius: 16px; /* Larger border radius */
+    backdrop-filter: blur(10px); /* Blurry background effect */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased box shadow for a subtle lift */
+}
+
+h1 {
+    color: rgb(255, 255, 255) !important;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: black;
+}
+
+#top {
+    margin-top: 5% !important;
+}
+
+.calculator {
+    margin-top: 5% !important;    
+    width: fit-content !important;
+    height: fit-content !important;
+    margin: auto;
+    position: relative;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 16px !important;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.info {
+        position: absolute;
+    top: -1vw;
+    right: -1vw;
+    background-color: #fff;
+    color: black;
+    font-style: italic;
+    width: 2vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100vw;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#compoundInfoPage, #simpleInfoPage {
+    cursor:default;
+    position: absolute;
+    width: 20vw;
+    height: 20vh;
+    background-color: #fff;
+    top: calc(-20vh + 0.5vw);
+    right: calc(-20vw + 0.5vw);
+    display: flex;
+    align-items: center;
+    border-radius: 2vw 2vw 2vw 0;
+    border: 0.5px solid black;
+    padding: 10px;
+    display: none;
+}
+
+button {
+    background-color: gray;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: background-color 0.8s ease;
+
+}
+
+button:hover {
+    
+    background-color: darkblue;
+    border-radius: 34px;
+}
+
+#result1, #result2 {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333; /* Adjusted text color for better visibility */
+}
+
+#compound-interest {display: none;}
